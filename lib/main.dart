@@ -40,9 +40,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          'Kindacode.com',
-        ),
+        title: Text("Total Users: " + _items.length.toString()),
+
+        /// leading: Text(_items.length.toString()),
       ),
       body: Padding(
         padding: const EdgeInsets.all(25),
@@ -63,9 +63,11 @@ class _HomePageState extends State<HomePage> {
                           margin: EdgeInsets.all(10),
                           child: ListTile(
                             leading: Text(_items[index]["FullName"].toString()),
-                            title: Text(_items[index]["Phone number"].toString()),
-                            subtitle:
-                                Text(_items[index]["FacebookLink"] ?? "null"),
+                            title:
+                                Text(_items[index]["Phone number"].toString()),
+                            subtitle: Text("https:\/\/www.facebook.com\/" +
+                                    _items[index]["FacebookLink"] ??
+                                "null"),
                           ),
                         );
                       },
